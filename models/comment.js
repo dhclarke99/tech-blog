@@ -12,6 +12,10 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    body: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
     blog_post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
