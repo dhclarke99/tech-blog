@@ -21,6 +21,7 @@
   
       if (response.ok) {
         console.log("success!")
+        document.location.replace('/dashboard')
       } else {
         console.log("fail!");
       }
