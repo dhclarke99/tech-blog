@@ -33,7 +33,7 @@
     
     {{#each blog.comments as |comments|}}
     <p>{{comments.body}}</p>
-    <p>-{{blog.comments.user.username}}</p>
+    <p>-{{comments.user.username}} on {{comments.createdAt}}</p>
     {{/each}}
 
 </div>
