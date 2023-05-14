@@ -1,3 +1,32 @@
+const handleFormData = async (event) => {
+    event.preventDefault();
+    console.log("click");
+    const title = document.querySelector('.title').value;
+    const body = document.querySelector('.body').value;
+    
+    console.log(title);
+    console.log(body);
+
+    const response = await fetch('/api/blogs', {
+        method: 'POST',
+        body: JSON.stringify({title, body}),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      console.log(JSON.stringify({title}))
+      if (response.ok) {
+      
+        console.log("response worked")
+         document.location.replace('/dashboard');
+        
+        } else {
+        console.log("error")
+        alert(response.statusText);
+      }
+    
+
+    
+}
+
 const newPostForm = async (event) => {
 event.preventDefault();
 console.log("click")
@@ -32,8 +61,12 @@ parent.appendChild(div4);
 div4.appendChild(button);
 
 button.setAttribute("class", "submit");
+input1.setAttribute("class", "title");
+input2.setAttribute("class", "body");
 
-
+document
+.querySelector('.submit')
+.addEventListener('click', handleFormData);
 
 
 }

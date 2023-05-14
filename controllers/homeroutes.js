@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
       });
 
     //   res.status(200).json(dbBlogData);
+    console.log(dbBlogData)
   
       const blogs = dbBlogData.map((blog) =>
         blog.get({ plain: true })
@@ -31,7 +32,7 @@ router.get('/', async (req, res) => {
   router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
-      res.redirect('/dashBoard');
+      res.redirect('/dashboard');
       return;
     }
   
@@ -44,9 +45,40 @@ router.get('/', async (req, res) => {
     res.render('signUp');
   });
 
-  router.get('/dashboard', (req, res) => {
+  router.get('/dashboard', async (req, res) => {
    try { if (req.session.logged_in) {
-    res.render('dashBoard');
+    const dbBlogData = await BlogPost.findByPk(req.session.user_id, {
+      include: [
+        {
+          model: Comment,
+          
+        },
+      ],
+    });
+    if (!dbBlogData) {
+      return res.render('dashBoard', {
+        blogs: [],
+      });
+    }
+    // console.log(res.status(200).json(dbBlogData));
+
+
+    if (dbBlogData) {
+      if (Array.isArray(dbBlogData)) {
+        const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+        res.render('dashBoard', {
+          blogs,
+          // loggedIn: req.session.loggedIn,
+        });
+      } else {
+        res.render('dashBoard', {
+          blogs: [],
+          // loggedIn: req.session.loggedIn,
+        });
+      }
+      
+  }
+    
    } else res.render('login')
    } catch (err) {
     console.log(err);
