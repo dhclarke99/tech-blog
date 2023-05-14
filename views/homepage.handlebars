@@ -25,7 +25,7 @@
 {{log this}}
 {{#each blogs as |blog| }}
 <div class="row align-center mb-5">
-  <button class="blogPost" id="{{blog.user_id}}">
+  <button class="blog-post" id="{{blog.id}}">
   <div class="col-md-6">
     <aside>Posted by {{blog.user.username}} on {{blog.createdAt}}</aside>
     <h2>{{blog.title}}</h2>
@@ -37,3 +37,5 @@
 </div>
 <br>
 {{/each}}
+<script src="./js/homePage.js"></script>
+<script src="./js/logout.js"></script>
