@@ -101,6 +101,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
     // res.json(dbBlogData)
     res.render('blogPost', {
       blog,
+      Comment,
       // loggedIn: req.session.loggedIn,
     });
   } catch (err) {

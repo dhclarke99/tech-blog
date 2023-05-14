@@ -9,15 +9,11 @@
     </a>
    
     <button class="btn" id="logout">Logout</button>
-    
-    
-    
+ 
   </nav>
   <h1>
-    Your Dashboard
+   The Tech Blog
   </h1>
-
-
 
 </header>
 
@@ -33,6 +29,19 @@
   </button>
 </div>
 <br>
-<script src="../js/logout.js"></script>
+<div class="previous-comments">
+    
+    {{#each blog.comments as |comments|}}
+    <p>{{comments.body}}</p>
+    <p>-{{blog.comments.user.username}}</p>
+    {{/each}}
 
-<script src="../js/blogPost"></script>
+</div>
+<div class="comment">
+    <h2>Add A Comment</h2>
+    <input>
+    <button>Submit</button>
+
+</div>
+<script src="../js/logout.js"></script>
+<script src="../js/blogPost.js"></script>

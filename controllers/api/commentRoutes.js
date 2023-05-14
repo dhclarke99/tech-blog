@@ -1,11 +1,19 @@
 const router = require('express').Router();
-const { Comment } = require('../../models');
+const { Comment, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // *Checking get comments as a test NOT for users to do**
 router.get('/', async (req, res) => {
     try {
-      const commentData = await Comment.findAll();
+      const commentData = await Comment.findAll({
+        include: [
+          {
+            model: User,
+            
+            
+          },
+        ],
+      });
   
     //   req.session.save(() => {
     //     req.session.user_id = userData.id;
