@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
         include: [
           {
             model: Comment,
+            model: User
             
           },
         ],
@@ -19,6 +20,7 @@ router.get('/', async (req, res) => {
       const blogs = dbBlogData.map((blog) =>
         blog.get({ plain: true })
       );
+      // res.json(dbBlogData)
       res.render('homepage', {
         blogs,
         // loggedIn: req.session.loggedIn,
@@ -46,45 +48,34 @@ router.get('/', async (req, res) => {
   });
 
   router.get('/dashboard', async (req, res) => {
-   try { if (req.session.logged_in) {
-    const dbBlogData = await BlogPost.findByPk(req.session.user_id, {
-      include: [
-        {
-          model: Comment,
-          
-        },
-      ],
-    });
-    if (!dbBlogData) {
-      return res.render('dashBoard', {
-        blogs: [],
-      });
-    }
-    // console.log(res.status(200).json(dbBlogData));
-
-
-    if (dbBlogData) {
-      if (Array.isArray(dbBlogData)) {
-        const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+    try {
+      if (req.session.logged_in) {
+        const blogData = await BlogPost.findAll({
+          where: {
+            user_id: req.session.user_id,
+          },
+          include: [
+            {
+              model: Comment,
+            },
+          ],
+        });
+        console.log(blogData)
+       
+       
+        const blogs = blogData.map((blog) => blog.get({ plain: true }));
+  
         res.render('dashBoard', {
+          // user,
           blogs,
-          // loggedIn: req.session.loggedIn,
         });
       } else {
-        res.render('dashBoard', {
-          blogs: [],
-          // loggedIn: req.session.loggedIn,
-        });
+        res.redirect('/login');
       }
-      
-  }
-    
-   } else res.render('login')
-   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-  
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
   });
 
 
