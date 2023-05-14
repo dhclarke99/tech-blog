@@ -1,3 +1,21 @@
+<header class="display-flex justify-space-between align-center p-2">
+  <nav>
+    <button class="btn" id="logout">Home</button>
+    <button class="btn" id="logout">Dashboard</button>
+    <button class="btn" id="login">Login</button>
+    {{#if logged_in}}
+    <button class="btn" id="logout">Logout</button>
+    {{/if}}
+
+  </nav>
+  <h1>
+    The Tech Blog
+  </h1>
+
+
+
+</header>
+
 {{#each blogs as |blog| }}
 <div class="row align-center mb-5">
   <div class="col-md-6">
