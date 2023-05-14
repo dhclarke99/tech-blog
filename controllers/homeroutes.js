@@ -45,9 +45,9 @@ router.get('/', async (req, res) => {
   });
 
   router.get('/dashboard', (req, res) => {
-   try {
+   try { if (req.session.logged_in) {
     res.render('dashBoard');
-    
+   } else res.render('login')
    } catch (err) {
     console.log(err);
     res.status(500).json(err);

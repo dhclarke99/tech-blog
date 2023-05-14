@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 
 // *Creating a new username/pw
 router.post('/', async (req, res) => {
-  try {
+  try { 
     const userData = await User.create(req.body);
 
     req.session.save(() => {
@@ -28,6 +28,7 @@ router.post('/', async (req, res) => {
       req.session.logged_in = true;
 
       res.status(200).json(userData);
+      res.render('dashBoard');
     });
   } catch (err) {
     res.status(400).json(err);
