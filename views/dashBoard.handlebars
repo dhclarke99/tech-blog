@@ -10,9 +10,11 @@
     <button class="btn" id="logout">Logout</button>
     
   </nav>
-  <h1>
-    Your Dashboard
-  </h1>
+  {{log this}}
+ {{#if blogs.length}}
+    <h1>{{blogs.[0].user.username}}'s Dashboard</h1>
+  {{/if}}
+
 
 
 

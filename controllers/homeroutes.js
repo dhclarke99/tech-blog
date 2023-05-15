@@ -25,6 +25,7 @@ router.get('/', async (req, res) => {
       // res.json(dbBlogData)
       res.render('homepage', {
         blogs,
+        
         // loggedIn: req.session.loggedIn,
       });
     } catch (err) {
@@ -60,9 +61,12 @@ router.get('/', async (req, res) => {
             {
               model: Comment,
             },
+            {
+              model: User,
+            }
           ],
         });
-        console.log(blogData)
+       
        
        
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
@@ -70,6 +74,7 @@ router.get('/', async (req, res) => {
         res.render('dashBoard', {
           // user,
           blogs,
+          User
         });
       } else {
         res.redirect('/login');
@@ -94,7 +99,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
     });
 
   //   res.status(200).json(dbBlogData);
-  console.log(dbBlogData)
+  
 
   const blog = dbBlogData.get({ plain: true });
     
