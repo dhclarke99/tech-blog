@@ -82,14 +82,14 @@ const handleFormData = async (event) => {
         body: JSON.stringify({title, body}),
         headers: { 'Content-Type': 'application/json' },
       });
-      console.log(JSON.stringify({title}))
+      
       if (response.ok) {
       
         console.log("response worked")
          document.location.replace('/dashboard');
         
         } else {
-        console.log("error")
+        console.log("error");
         alert(response.statusText);
       }
     
