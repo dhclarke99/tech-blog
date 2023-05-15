@@ -5,8 +5,6 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 
 
-// const helpers = require('./utils/helpers');
-
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -14,19 +12,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({});
-
-hbs.handlebars.registerHelper('ifCond', function(v1, v2, options) {
-  if(v1 === v2) {
-    // return options.fn(this);
-    return true;
-  }
-  // return options.inverse(this);
-  return false;
-});
+const hbs = exphbs.create({ });
 
 const sess = {
-  secret: process.env.SESSION_SECRET,
+  secret: 'Super secret secret',
   cookie: {
     maxAge: 300000,
     httpOnly: true,
@@ -55,4 +44,3 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-
