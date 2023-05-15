@@ -22,7 +22,7 @@
 
 <div id="previous-posts">
 {{#each blogs as |blog| }}
-<button class="old-post" id="{{blog.id}}">
+<button class="old-post" id="{{blog.id}}" data-blog_post_id="{{blog.id}}">
 <div class="row align-center mb-5">
   <div class="col-md-6">
     <h2>{{blog.title}}</h2>

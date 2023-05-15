@@ -3,24 +3,19 @@ const editPost = async (event) => {
 
 }
 
-const deletePost = async (event) => {
-  event.preventDefault();
-  const response = await fetch('/api/blogs/', {
-    method: 'POST',
-    body: JSON.stringify({title, body}),
-    headers: { 'Content-Type': 'application/json' },
+const deletePost = async (blog_post_id) => {
+  const response = await fetch(`/api/blogs/${blog_post_id}`, {
+    method: 'DELETE',
   });
-  console.log(JSON.stringify({title}))
+
   if (response.ok) {
-  
-    console.log("response worked")
-     document.location.replace('/dashboard');
-    
-    } else {
-    console.log("error")
+    console.log("response worked");
+    document.location.replace('/dashboard');
+  } else {
+    console.log("error");
     alert(response.statusText);
   }
-}
+};
 
 
 const editOrDelete = async (event) => {
@@ -42,29 +37,15 @@ const editOrDelete = async (event) => {
     parent.appendChild(editButton);
     parent.appendChild(deleteButton);
 
-    const response = await fetch('/blog', {
-      method: 'POST',
-      body: JSON.stringify({ body, blog_post_id}),
-      headers: { 'Content-Type': 'application/json' },
-    });
-    
-    if (response.ok) {
-    
-      console.log("response worked")
-       document.location.replace(`/blog/${blog_post_id}`);
-      
-      } else {
-      console.log("error")
-      alert(response.statusText);
-    }
+    const blogPostId = event.target.dataset.blog_post_id;
 
     document
     .querySelector('#edit')
     .addEventListener('click', editPost);
 
-    document
+  document
     .querySelector('#delete')
-    .addEventListener('click', deletePost);
+    .addEventListener('click', () => deletePost(blogPostId));
   
 }
 
@@ -146,6 +127,6 @@ console.log("listening")
     .querySelector('#new-post')
     .addEventListener('click', newPostForm);
 
-    document.querySelectorAll('.old-post').addEventListener('click', () => {
-      editOrDelete;
+    document.querySelectorAll('.old-post').forEach((post) => {
+      post.addEventListener('click', editOrDelete);
     });
