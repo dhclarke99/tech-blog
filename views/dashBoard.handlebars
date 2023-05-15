@@ -22,6 +22,7 @@
 
 <div id="previous-posts">
 {{#each blogs as |blog| }}
+<button class="old-post" id="{{blog.id}}">
 <div class="row align-center mb-5">
   <div class="col-md-6">
     <h2>{{blog.title}}</h2>
@@ -30,6 +31,11 @@
     <p>{{blog.body}}</p>
   </div>
 </div>
+</button>
+<div class="edit-delete">
+
+</div>
+<br>
 {{/each}}
 </div>
 
