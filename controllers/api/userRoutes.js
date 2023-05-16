@@ -31,6 +31,7 @@ router.post('/', async (req, res) => {
       res.render('dashBoard');
     });
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
