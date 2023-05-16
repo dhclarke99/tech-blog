@@ -1,5 +1,5 @@
 const blogPostButtons = document.querySelectorAll('.blog-post');
-  blogPostButtons.forEach(button => {
+  blogPostButtons.forEach((button) => {
     button.addEventListener('click', async () => {
       // Retrieve the blog post ID from the button's data attribute
       const blogId = button.getAttribute('id');
