@@ -27,8 +27,8 @@ router.post('/', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
-      res.render('dashBoard');
+      // res.status(200).json(userData);
+      res.redirect('/dashboard');
     });
   } catch (err) {
     console.log(err)
@@ -78,7 +78,7 @@ router.post('/logout', (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
-    res.render('homePage')
+    res.redirect('/')
   } else {
     res.status(404).end();
   }

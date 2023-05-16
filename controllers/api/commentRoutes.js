@@ -33,9 +33,9 @@ router.get('/', async (req, res) => {
         ...req.body,
         user_id: req.session.user_id,
       });
-  
-      res.status(200).json(commentData);
-      res.render('/dashboard')
+  // console.log(commentData)
+  //     res.status(200).json(commentData);
+      res.redirect(`/dashboard`);
     } catch (err) {
       res.status(400).json(err);
     }
