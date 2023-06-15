@@ -23,25 +23,25 @@ const editOrDelete = async (event) => {
     console.log("click");
     const parent = document.querySelector('.edit-delete');
     
-    const editButton = document.createElement('button');
+    // const editButton = document.createElement('button');
     const deleteButton = document.createElement('button');
     const blogId = event.target.id;
     console.log(blogId);
 
-    editButton.innerText = "Edit Post";
+    // editButton.innerText = "Edit Post";
     deleteButton.innerText = "Delete Post";
 
-    editButton.setAttribute("id", "edit");
+    // editButton.setAttribute("id", "edit");
     deleteButton.setAttribute("id", "delete");
 
-    parent.appendChild(editButton);
+    // parent.appendChild(editButton);
     parent.appendChild(deleteButton);
 
     const blogPostId = event.target.dataset.blog_post_id;
 
-    document
-    .querySelector('#edit')
-    .addEventListener('click', editPost);
+    // document
+    // .querySelector('#edit')
+    // .addEventListener('click', editPost);
 
   document
     .querySelector('#delete')
@@ -53,7 +53,7 @@ const handleFormData = async (event) => {
     event.preventDefault();
     console.log("click");
     const title = document.querySelector('.title').value;
-    const body = document.querySelector('.body').value;
+    const body = document.querySelector('.content-body').value;
     
     console.log(title);
     console.log(body);
@@ -112,7 +112,7 @@ div4.appendChild(button);
 
 button.setAttribute("class", "submit");
 input1.setAttribute("class", "title");
-input2.setAttribute("class", "body");
+input2.setAttribute("class", "content-body");
 
 document
 .querySelector('.submit')
