@@ -18,14 +18,14 @@
 
 <div id="previous-posts">
   {{#each blogs as |blog| }}
-    <div class="row align-center mb-5">
+    <div class="row align-center mb-5" id="{{blog.id}}" data-blog_post_id="{{blog.id}}">
       <button class="blog-post button old-post" id="{{blog.id}}" data-blog_post_id="{{blog.id}}">
-      <div class="col-md-12 header">
-        <h2>{{blog.title}}</h2>
-        <aside>{{blog.createdAt}}</aside>
+      <div class="col-md-12 header" id="{{blog.id}}" data-blog_post_id="{{blog.id}}">
+        <h2 id="{{blog.id}}" data-blog_post_id="{{blog.id}}">{{blog.title}}</h2>
+        <aside id="{{blog.id}}" data-blog_post_id="{{blog.id}}">{{blog.createdAt}}</aside>
       </div>
-      <div class="col-md-12 body">
-        <p>{{blog.body}}</p>
+      <div class="col-md-12 body" id="{{blog.id}}" data-blog_post_id="{{blog.id}}">
+        <p id="{{blog.id}}" data-blog_post_id="{{blog.id}}">{{blog.body}}</p>
       </div>
     </div>
   </button>
