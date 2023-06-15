@@ -24,17 +24,23 @@ h1 {
 }
 
 .main {
-    display: flex;
     margin: 15px;
-    flex-direction: column;
-    align-items: center;
 }
 
 .col-md-12.header {
-    color: beige;
     display: flex;
+    color: beige;
+    background-color: rgb(66, 41, 41);
     flex-direction: row;
     align-items: center;
-    background-color: rgb(66, 41, 41);
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
+.btn {
+    color: beige;
+}
+.blog-post.button {
+    background-color: beige;
+}
