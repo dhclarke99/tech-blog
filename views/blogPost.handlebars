@@ -28,14 +28,11 @@
 <br>
 </div>
 
-<div class="row align-center mb-5">
-  <div class="blogPost button" id="{{blog.user_id}}">
+<div class="main">
   <div class="col-md-12 comments">
     <h2>Comments</h2>
   </div>
-  </div>
-</div>
-    
+ 
     {{#each blog.comments as |comments|}}
     <div class="previous-comments">
     <p>{{comments.body}}</p>
@@ -48,6 +45,8 @@
     <h2>Add A Comment</h2>
     <input id="body">
     <button id="submit"> Submit</button>
+
+    </div>
 
 </div>
 <script src="/js/logout.js"></script>

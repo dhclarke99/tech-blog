@@ -37,6 +37,7 @@ router.get('/', async (req, res) => {
   //     res.status(200).json(commentData);
       res.redirect(`/dashboard`);
     } catch (err) {
+      console.log(err)
       res.status(400).json(err);
     }
   });
