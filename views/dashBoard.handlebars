@@ -1,14 +1,14 @@
-<header class="display-flex justify-space-between align-center p-2">
+<header>
   <nav>
     <a href="/"><button class="nav-button" id="home">Home</button></a>
     <a href="/dashboard"><button class="nav-button" id="dashboard">Dashboard</button></a>
-    
+
     <button class="nav-button" id="logout">Logout</button>
-    
+
   </nav>
   {{log this}}
- {{#if blogs.length}}
-    <h1>{{blogs.[0].user.username}}'s Dashboard</h1>
+  {{#if blogs.length}}
+  <h1>{{blogs.[0].user.username}}'s Dashboard</h1>
   {{/if}}
 
 
@@ -17,32 +17,33 @@
 </header>
 
 <div id="previous-posts">
-{{#each blogs as |blog| }}
-<button class="old-post" id="{{blog.id}}" data-blog_post_id="{{blog.id}}">
-<div class="row align-center mb-5">
-  <div class="col-md-12">
-    <h2>{{blog.title}}</h2>
+  {{#each blogs as |blog| }}
+    <div class="row align-center mb-5">
+      <button class="blog-post button old-post" id="{{blog.id}}" data-blog_post_id="{{blog.id}}">
+      <div class="col-md-12 header">
+        <h2>{{blog.title}}</h2>
+        <aside>{{blog.createdAt}}</aside>
+      </div>
+      <div class="col-md-12 body">
+        <p>{{blog.body}}</p>
+      </div>
+    </div>
+  </button>
+  <div class="edit-delete">
+
   </div>
-  <div class="col-md-12">
-    <p>{{blog.body}}</p>
-  </div>
-</div>
-</button>
-<div class="edit-delete">
-
-</div>
-<br>
-{{/each}}
+  <br>
+  {{/each}}
 </div>
 
-<div id="post-content" >
-   
+<div id="post-content">
+
 
 </div>
 <br>
 <br>
-<div>
-    <button class="btn btn-primary" id="new-post">Add New Post</button>
+<div class="add-post">
+  <button class="btn btn-primary" id="new-post">+ New Post</button>
 </div>
 <script src="/js/dashBoard.js"></script>
 <script src="/js/logout.js"></script>
