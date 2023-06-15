@@ -4,23 +4,25 @@ body {
 }
 
 header {
-    
+
     background-color: rgb(66, 41, 41);
     padding: 5px;
     margin: 0;
-    width: 100%; /* Set the width to 100% */
-    box-sizing: border-box; /* Include padding within the width */
-  }
+    width: 100%;
+    /* Set the width to 100% */
+    box-sizing: border-box;
+    /* Include padding within the width */
+}
 
 nav {
-    margin: 10px; 
+    margin: 10px;
 }
 
 h1 {
     border-style: solid;
     background-color: beige;
     display: inline;
-   
+
 }
 
 .main {
@@ -60,12 +62,17 @@ h1 {
 }
 
 .mb-5 {
-    margin-bottom: 0rem!important;
+    margin-bottom: 0rem !important;
 }
 
 .nav-button {
     border-style: none;
     color: beige;
-  background-color:rgb(66, 41, 41) ;
-  margin-right: 30px;
-  }
+    background-color: rgb(66, 41, 41);
+    margin-right: 30px;
+}
+
+.container.container-fluid.mt-5 {
+    margin-top: 0px;
+    min-width: 100%;
+}
