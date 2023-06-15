@@ -1,15 +1,11 @@
 <header class="display-flex justify-space-between align-center p-2">
   <nav>
-    
-    <a href="/">
-    <button class="btn" id="home">Home</button>
-    </a>
-    <button class="btn" id="dashboard">Dashboard</button>
-    <a href="/login">
-    <button class="btn" id="login">Login</button>
-    </a>
+
+    <a href="/"><button class="nav-button" id="home">Home</button></a>
+    <button class="nav-button" id="dashboard">Dashboard</button>
+    <a href="/login"><button class="nav-button" id="login">Login</button></a>
     {{#if logged_in}}
-    <button class="btn" id="logout">Logout</button>
+    <button class="nav-button" id="logout">Logout</button>
     {{/if}}
 
   </nav>
@@ -22,27 +18,25 @@
 </header>
 
 <div>
-    <h2 class="login">Login</h2>
-    <div class="container">
+  <h2 class="login">Login</h2>
+  <div class="container">
     <div class="card5">
-    <form class="bucket-list-login-form">
-      <div class="form-group2">
-        <label for="username-login">Email:</label>
-        <input class="form-input" type="text" id="email-entry" />
-      </div>
-      <br>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-entry" />
-      </div>
-      <br>
+      <form class="bucket-list-login-form">
+        <div class="form-group2">
+          <label for="username-login">Email:</label>
+          <input class="form-input" type="text" id="email-entry" />
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="password-login">Password:</label>
+          <input class="form-input" type="password" id="password-entry" />
+        </div>
+        <br>
         <button class="btn btn-primary" type="register">Login</button>
-       
-      </div>
+
+    </div>
     </form>
   </div>
-  <a href="/signup">
-    <button class="btn" id="sign-up">Sign Up Instead</button>
-    </a>
-  </div>
+  <a href="/signup"><button class="btn btn-primary" id="sign-up">Sign Up Instead</button></a>
+</div>
 <script src="/js/login.js"></script>

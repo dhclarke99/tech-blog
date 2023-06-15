@@ -1,15 +1,11 @@
 <header class="display-flex justify-space-between align-center p-2">
   <nav>
     
-    <a href="/">
-    <button class="btn" id="home">Home</button>
-    </a>
-    <button class="btn" id="dashboard">Dashboard</button>
-    <a href="/login">
-    <button class="btn" id="login">Login</button>
-    </a>
+    <a href="/"><button class="nav-button" id="home">Home</button></a>
+    <button class="nav-button" id="dashboard">Dashboard</button>
+    <a href="/login"><button class="nav-button" id="login">Login</button></a>
     {{#if logged_in}}
-    <button class="btn" id="logout">Logout</button>
+    <button class="nav-button" id="logout">Logout</button>
     {{/if}}
 
   </nav>
