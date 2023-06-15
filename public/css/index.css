@@ -30,3 +30,10 @@ h1 {
     align-items: center;
 }
 
+.col-md-6.header {
+    color: beige;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(66, 41, 41);
+}
