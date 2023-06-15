@@ -30,7 +30,6 @@ BlogPost.init(
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
       get() {
-        // Format the timestamp to "mm/dd/yyyy" when accessed
         const date = this.getDataValue('createdAt');
         return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
       }

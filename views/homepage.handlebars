@@ -25,12 +25,12 @@
 {{log this}}
 {{#each blogs as |blog| }}
 <div class="row align-center mb-5">
-  <button class="blog-post" id="{{blog.id}}">
-  <div class="col-md-6 header">
+  <button class="blog-post button" id="{{blog.id}}">
+  <div class="col-md-12 header">
     <h2>{{blog.title}}</h2>
     <aside>Posted by {{blog.user.username}} on {{blog.createdAt}}</aside>
   </div>
-  <div class="col-md-6 body">
+  <div class="col-md-12 body">
     <p>{{blog.body}}</p>
   </div>
   </button>
