@@ -9,11 +9,11 @@ const seedAll = async () => {
 
   await seedUser();
   
-  // await seedBlog();
+  await seedBlog();
 
   
 
-  // await seedComment();
+  await seedComment();
 
   process.exit(0);
 };

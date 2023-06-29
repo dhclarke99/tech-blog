@@ -2,18 +2,18 @@ const { BlogPost } = require('../models');
 
 const blogData = [
     {
-        title: "Blogpost 1",
-        body: "Here is my blogpost. This is my opinion on fruits",
+        title: "Warriors 2023 Season",
+        body: "Tough loss on Friday, needed more from Klay. I wonder what this offseason will bring...",
         user_id: 1
     },
     {
-        title: "Blogpost 2",
-        body: "Here is the next blogpost. This is my opinion on vegetables",
+        title: "Best Fruits of 2023",
+        body: "Fresh mangos still top the list, pineapple slaps as well. Strawberries are good, but blueberries are overrated!",
         user_id: 2
     },
     {
-        title: "Blogpost 3",
-        body: "Here is the final blogpost. I love sports",
+        title: "I love videogames...",
+        body: "Let's talk about the new nba2k23 game...so good. New Zelda is awesome too. ",
         user_id: 3
     }
 ];

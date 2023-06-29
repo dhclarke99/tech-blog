@@ -15,12 +15,13 @@ No Installation required.
 
 Click this [link](https://safe-stream-47655.herokuapp.com/) to open the webpage. 
 
-Upon loading you will be met with a landing page that contains all created blogposts, if any exist. It should look like the below.
-![Screenshot of landing page](./assets/Screen%20Shot%202023-05-14%20at%209.55.28%20PM.png)
+Upon loading you will be met with a landing page that contains all created blogposts, if any exist. It should look like the screenshot below.
 
-Click the login page to login. Login with your credentials or click "sign Up" to create an account. After you sign up navigate back to the homepage and click on any of the posts to leave a comment. When you click submit you may be met with an error window. Just dismiss the window by clicking "ok" and reload the page to see your posted comment.
+![Screenshot of landing page](./assets/tech-blog.png)
 
-Head over to dashboard to see your created posts, add a post, or delete a post. Again, if you are met with an error popup window, just dismiss the window and reload the page. 
+Click the login page to login. Login with your credentials or click "sign Up" to create an account. After you sign up navigate back to the homepage and click on any of the posts to leave a comment. 
+
+Head over to dashboard to see your created posts, add a post, or delete a post. 
 
 
 
